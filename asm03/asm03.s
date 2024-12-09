@@ -15,7 +15,7 @@ _start:
     mov rsi, [rsp + 16]    ; rsi pointe sur argv[1]
 
     ; Comparaison avec "42"
-    cmp byte [rsi], '4'    ; Vérifier si le premier caractère est '4'
+    cmp byte [rsi], '4'    ; Vérifier si le premier caractère est '4' bien
     jne error              ; Si ce n'est pas '4', aller à l'erreur
     cmp byte [rsi + 1], '2' ; Vérifier si le deuxième caractère est '2'
     jne error              ; Si ce n'est pas '2', aller à l'erreur
