@@ -7,12 +7,9 @@ global _start
 
 _start:
     ; Vérifier que nous avons au moins un argument
-    mov rdi, [rsp + 8]    ; rdi pointe sur argc
-    cmp rdi, 1             ; On vérifie si argc > 1
-    jle error              ; Si argc <= 1, on va directement à l'erreur
-
-    ; Récupérer l'adresse du premier paramètre (argv[1])
-    mov rsi, [rsp + 16]    ; rsi pointe sur argv[1]
+    pop rax
+    pop rsi
+    pop rsi
 
     ; Comparaison avec "42"
     cmp byte [rsi], '4'    ; Vérifier si le premier caractère est '4' bien
