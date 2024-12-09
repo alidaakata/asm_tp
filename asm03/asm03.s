@@ -6,11 +6,16 @@ section .text
 global _start
 
 _start:
+    ; Vérifier le nombre d'arguments
+    mov rdi, [rsp]        ; Charger le nombre d'arguments (argc) dans rdi
+    cmp rdi, 2            ; Vérifie si le nombre d'arguments est >= 2 (programme + 1 argument)
+    jl error             ; Si moins de 2, aller à error
+
     ; Vérifier que nous avons au moins un argument
     pop rax
     pop rsi
     pop rsi
-
+  
     ; Comparaison avec "42"
     cmp byte [rsi], '4'    ; Vérifier si le premier caractère est '4' bien
     jne error              ; Si ce n'est pas '4', aller à l'erreur
